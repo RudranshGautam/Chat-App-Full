@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js"></script>
+    <title>ChatsApp</title>
+  </head>
+  <body>
+    <div id="overlay"></div>
+    <div class="navbar">
+      <div class="nav-content">
+        <div class="logo">
+          ChatsApp<span class="material-symbols-outlined"> forum </span>
+        </div>
+        <div class="user-actions">
+          <span id="user-name"></span>
+          <span id="logout"><a href="#">Logout</a></span>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="group-container">
+        <div class="group-container__header">
+          <h1>Groups</h1>
+          <span id="create-btn">+</span>
+        </div>
+
+        <ul id="groups-list"></ul>
+      </div>
+      <div class="chatBox">
+        <div class="chat-name" id="chat-name">
+          <h1 id="groupHeader"></h1>
+          <span class="edit-Btn"></span>
+        </div>
+        <div class="chat-container">
+          <div class="message-container" id="message-container">
+            <div class="message" id="messages">
+              <div class="welcome">
+                <div>
+                  <img src="/image/welcome.svg" alt="SVG Image" />
+                </div>
+                <div>
+                  <span>Welcome to ChatsApp !</span
+                  ><span id="intro_second"
+                    >Where every message brings us closer. Start a conversation,
+                    share a smile!</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <form id="send-container" class="send-container">
+            <input
+              type="text"
+              id="message-input"
+              placeholder="Type your message..."
+            />
+            <input type="hidden" id="group_id" />
+            <label id="imageIcon" for="image-input" class="upload-button"
+              ><span class="material-symbols-outlined"> image </span></label
+            >
+            <input type="file" id="image-input" accept="image/*" hidden />
+            <button type="submit" class="send-button">
+              <span class="material-symbols-outlined"> send </span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="group-form__div">
+      <form id="create-group">
+        <h2>Create a Group</h2>
+        <input type="text" id="group-name" placeholder="Group Name" />
+        <input type="text" placeholder="Members" />
+        <div>
+          <ul id="userList"></ul>
+        </div>
+        <button type="submit">Create Group</button>
+      </form>
+    </div>
+    <div class="edit-group-form__div">
+      <form id="edit-group">
+        <h2>Edit Group Details</h2>
+        <input type="text" id="edit-group-name" placeholder="Group Name" />
+        <input type="text" placeholder="Members" />
+        <input type="hidden" id="g_id" />
+        <div>
+          <ul id="editList"></ul>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <script src="/js/main.js"></script>
+  </body>
+</html>
